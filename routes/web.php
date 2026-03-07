@@ -182,3 +182,25 @@ Route::post('/update-profile', [GeneralController::class, 'update_profile'])->na
 Route::get('/partner-add', [GeneralController::class, 'partner_add'])->middleware('is_admin');
 Route::post('/partner-store', [GeneralController::class, 'partner_store'])->middleware('is_admin');
 Route::get('/partner-delete/{id}', [GeneralController::class, 'partner_delete'])->middleware('is_admin');
+
+// Products, Categories, Subcategories start
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\SubCategoryController;
+
+Route::get('/add-categories', [ProductCategoryController::class, 'add_categories'])->name('add.categories')->middleware('is_admin');
+Route::post('/store-categories', [ProductCategoryController::class, 'store_categories'])->name('store.categories')->middleware('is_admin');
+Route::get('/edit-categories/{id}', [ProductCategoryController::class, 'edit_categories'])->name('edit.categories')->middleware('is_admin');
+Route::post('/update-categories', [ProductCategoryController::class, 'update_categories'])->name('update.categories')->middleware('is_admin');
+
+Route::get('/add-subcategories', [SubCategoryController::class, 'add_subcategories'])->name('add.subcategories')->middleware('is_admin');
+Route::post('/store-subcategories', [SubCategoryController::class, 'store_subcategories'])->name('store.subcategories')->middleware('is_admin');
+Route::get('/edit-subcategories/{id}', [SubCategoryController::class, 'edit_subcategories'])->name('edit.subcategories')->middleware('is_admin');
+Route::post('/update-subcategories', [SubCategoryController::class, 'update_subcategories'])->name('update.subcategories')->middleware('is_admin');
+
+Route::get('/add-products', [ProductController::class, 'add_products'])->name('add.products')->middleware('is_admin');
+Route::post('/store-products', [ProductController::class, 'store_products'])->name('store.products')->middleware('is_admin');
+Route::get('/edit-products/{id}', [ProductController::class, 'edit_products'])->name('edit.products')->middleware('is_admin');
+Route::post('/update-products', [ProductController::class, 'update_products'])->name('update.products')->middleware('is_admin');
+Route::get('/subcategories-by-category/{id}', [SubCategoryController::class, 'get_by_category'])->middleware('is_admin');
+// Products end
