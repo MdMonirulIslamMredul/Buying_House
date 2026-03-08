@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function add_products()
+    public function products()
     {
         return view('admin.product.product', [
             'products' => Product::latest()->get(),
@@ -66,6 +66,25 @@ class ProductController extends Controller
         ]);
     }
 
+    // Show add product form
+    public function show_add_form()
+    {
+        return view('admin.product.add-products', [
+            'categories' => ProductCategory::latest()->get(),
+            'subcategories' => SubCategory::latest()->get(),
+        ]);
+    }
+
+    // Admin products listing (for route /products)
+    // public function products()
+    // {
+    //     return view('admin.product.product', [
+    //         'products' => Product::latest()->get(),
+    //         'categories' => ProductCategory::latest()->get(),
+    //         'subcategories' => SubCategory::latest()->get(),
+    //     ]);
+    // }
+
     public function update_products(Request $request)
     {
         $request->validate([
@@ -103,6 +122,18 @@ class ProductController extends Controller
         $product->status = $request->status ? 1 : 0;
         $product->save();
 
-        return back()->with('message', 'Product updated successfully');
+        return redirect()->route('add.products')->with('message', 'Product updated successfully');
+        
+
+    }
+
+    public function delete_products($id)
+    {
+        $product = Product::findOrFail($id);
+        if ($product->image && file_exists(public_path($product->image))) {
+            unlink(public_path($product->image));
+        }
+        $product->delete();
+        return redirect()->route('add.products')->with('message', 'Product deleted');
     }
 }

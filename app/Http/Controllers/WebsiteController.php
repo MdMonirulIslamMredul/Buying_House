@@ -15,6 +15,9 @@ use App\Models\Patnar;
 use App\Models\Testimonial;
 use App\Models\VideoGallery;
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
+use App\Models\ProductCategory;
+use App\Models\SubCategory;
 
 class WebsiteController extends Controller
 {
@@ -106,6 +109,37 @@ class WebsiteController extends Controller
         return view('frontend.package.package_page', [
             'packages' => Package::where('status', 1)->paginate(6),
             'banner' => BannerAndTitle::where('page', 'packages')->latest()->first(),
+        ]);
+    }
+
+    public function products_page()
+    {
+        return view('frontend.products.products_page', [
+            'products' => Product::where('status', 1)->paginate(12),
+            'categories' => ProductCategory::where('status', 1)->get(),
+            'banner' => BannerAndTitle::where('page', 'products')->latest()->first(),
+        ]);
+    }
+
+    public function products_category($id)
+    {
+        $category = ProductCategory::findOrFail($id);
+        return view('frontend.products.products_page', [
+            'products' => Product::where('product_category_id', $id)->where('status', 1)->paginate(12),
+            'categories' => ProductCategory::where('status', 1)->get(),
+            'currentCategory' => $category,
+            'banner' => BannerAndTitle::where('page', 'products')->latest()->first(),
+        ]);
+    }
+
+    public function products_subcategory($id)
+    {
+        $subcategory = SubCategory::findOrFail($id);
+        return view('frontend.products.products_page', [
+            'products' => Product::where('subcategory_id', $id)->where('status', 1)->paginate(12),
+            'categories' => ProductCategory::where('status', 1)->get(),
+            'currentSubcategory' => $subcategory,
+            'banner' => BannerAndTitle::where('page', 'products')->latest()->first(),
         ]);
     }
     public function blogs_page()

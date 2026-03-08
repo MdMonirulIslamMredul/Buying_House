@@ -110,11 +110,53 @@
                         <li class="nav-item">
                             <a href="{{ route('about.page') }}"
                                 class="nav-link {{ Request::routeIs('about.page') ? 'active' : '' }}">
-                                Why Us
+                                About Us
                             </a>
                         </li>
 
+                         <li class="nav-item">
+                            <a href="{{ route('team.page') }}"
+                                class="nav-link {{ Request::routeIs('team.page') ? 'active' : '' }}">Team</a>
+                        </li>
+
+                       
+
+                        {{-- <li class="nav-item">
+                            <a href="{{ route('package.page') }}"
+                                class="nav-link {{ Request::routeIs('package.page') ? 'active' : '' }}">Packages</a>
+                        </li> --}}
+
+                       
+
+                    
                         <li class="nav-item">
+                            <a href="{{ route('products.page') }}"
+                                class="nav-link {{ Request::routeIs('products.page') || Request::routeIs('products.category') || Request::routeIs('products.subcategory') ? 'active' : '' }}">
+                                Products
+                                <i class="ri-arrow-down-s-line"></i>
+                            </a>
+                            <ul class="dropdown-menu services-dropdown">
+                                @php $categories = \App\Models\ProductCategory::orderBy('id')->get(); @endphp
+                                @foreach ($categories as $category)
+                                    <li class="nav-item">
+                                        <a href="{{ route('products.category', $category->id) }}"
+                                            class="nav-link">{{ $category->name }}</a>
+                                        <ul class="dropdown-menu services-dropdown" style="left:100%;top:0;">
+                                            @php $subcategories = \App\Models\SubCategory::where('product_category_id', $category->id)->orderBy('id')->get(); @endphp
+                                            @foreach ($subcategories as $subcategory)
+                                                <li class="nav-item">
+                                                    <a href="{{ route('products.subcategory', $subcategory->id) }}"
+                                                        class="nav-link">{{ $subcategory->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>       
+                                @endforeach
+                            </ul>
+                        </li>       
+
+
+                         <li class="nav-item">
                             <a href="{{ route('services') }}"
                                 class="nav-link {{ Request::routeIs('services') || Request::routeIs('services.details') ? 'active' : '' }}">
                                 Services
@@ -130,19 +172,6 @@
                                 @endforeach
                             </ul>
                         </li>
-
-                        {{-- <li class="nav-item">
-                            <a href="{{ route('package.page') }}"
-                                class="nav-link {{ Request::routeIs('package.page') ? 'active' : '' }}">Packages</a>
-                        </li> --}}
-
-                        <li class="nav-item">
-                            <a href="{{ route('team.page') }}"
-                                class="nav-link {{ Request::routeIs('team.page') ? 'active' : '' }}">Team</a>
-                        </li>
-
-                      
-
 
 
                         {{-- <li class="nav-item">

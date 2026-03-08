@@ -10,7 +10,7 @@ class ProductCategoryController extends Controller
     public function add_categories()
     {
         return view('admin.category.category', [
-            'categories' => ProductCategory::latest()->get(),
+            'categories' => ProductCategory::orderBy('id')->get(),
         ]);
     }
 
