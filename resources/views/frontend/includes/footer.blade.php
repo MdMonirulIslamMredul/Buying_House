@@ -1,7 +1,10 @@
+<!-- Load custom navbar override as well (ensures hover color applies if footer contains nav links) -->
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/custom-navbar.css') }}">
 <style>
     .footer-wrap {
     position: relative;
-    background-color: #002f68;
+    background-color: #212529
+    ;
 }
 </style>
 <footer class="footer-wrap">
@@ -44,7 +47,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title" style="color:#0cc0df">Company</h3>
+                    <h3 class="footer-widget-title" style="color:#741516">Company</h3>
                     <ul class="footer-menu list-style">
                         <li>
                             <a href="{{route('front.page')}}">
@@ -81,7 +84,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title" style="color:#0cc0df">Official Info</h3>
+                    <h3 class="footer-widget-title" style="color:#741516">Official Info</h3>
                     <ul class="contact-info list-style">
                         <li>
                             <i class="flaticon-map"></i>

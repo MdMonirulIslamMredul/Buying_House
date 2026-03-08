@@ -53,6 +53,9 @@ class About extends Model
         self::$data->details2 = $request->details2;
         self::$data->details3 = $request->details3;
         self::$data->details4 = $request->details4;
+        // new fields
+        self::$data->years_experience = $request->years_experience;
+        self::$data->establishment_year = $request->establishment_year;
 
         self::$data->save();
     }
@@ -65,6 +68,9 @@ class About extends Model
         self::$data->details2 = $request->details2;
         self::$data->details3 = $request->details3;
         self::$data->details4 = $request->details4;
+        // new fields
+        self::$data->years_experience = $request->years_experience;
+        self::$data->establishment_year = $request->establishment_year;
         if ($request->hasFile('image1')) {
             if (self::$data->image1 && file_exists(public_path(self::$data->image1))) {
                 @unlink(public_path(self::$data->image1));

@@ -31,7 +31,19 @@
                             <input type="file" name="banner_image" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>About page Details</label>
+                            <label>Years Experience</label>
+                            <input type="number" class="form-control" name="years_experience" id="years_experience"
+                                placeholder="Years of experience"
+                                value="{{ old('years_experience', isset($about_data) ? $about_data->years_experience : '') }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Establishment Year</label>
+                            <input type="number" class="form-control" name="establishment_year" id="establishment_year"
+                                placeholder="Establishment Year"
+                                value="{{ old('establishment_year', isset($about_data) ? $about_data->establishment_year : '') }}">
+                        </div>
+                        <div class="form-group">
+                            <label>About page Short Details</label>
                             <textarea id="tinymce" class="editor form-control" col="10" row="3" name="page_details"></textarea>
                         </div>
 

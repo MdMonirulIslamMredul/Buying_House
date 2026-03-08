@@ -41,8 +41,7 @@
 
 
     <!-- Service Section Start -->
-
-
+    @include('frontend.services.services')
     <!-- Service Section End -->
 
 
@@ -59,9 +58,7 @@
 
 
 
-    <!-- Testimonial Section Start -->
-    @include('frontend.testimonial.testimonial')
-    <!-- Testimonial Section End -->
+
 
 
     <!-- Blog Section Start -->
@@ -69,7 +66,9 @@
     <!-- Blog Section End -->
 
 
-    <!-- Video Gallery will be rendered via the included blogs partial -->
+    <!-- Gallery Section Start -->
+    @include('frontend.gallery.gallery')
+    <!-- Gallery Section End -->
 
 
 
@@ -77,6 +76,9 @@
     @include('frontend.team.team')
     <!-- Team Section End -->
 
+    <!-- Testimonial Section Start -->
+    @include('frontend.testimonial.testimonial')
+    <!-- Testimonial Section End -->
 
     {{-- patner section start --}}
     <div class="row">

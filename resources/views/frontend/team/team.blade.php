@@ -9,8 +9,8 @@
             @endforeach
         </div>
 
-        <div class="team-slider-one owl-carousel">
-            @if (isset($teams))
+     @if ($teams != null)
+        <div class="testimonial-slider-two owl-carousel">
                 @foreach ($teams as $team)
                     <div class="team-card-modern" data-aos="fade-up" data-aos-duration="1200"
                         data-aos-delay="{{ $loop->index * 100 }}">
@@ -43,7 +43,14 @@
                         </a>
                     </div>
                 @endforeach
-            @endif
+            
         </div>
+
+         <div class="text-center mt-4" data-aos="fade-up" data-aos-duration="1200">
+            <a href="{{ route('team.page') }}" class="blog-read-more-modern">
+                All Team Members <i class="flaticon-right-arrow"></i>
+            </a>
+        </div>
+    @endif
     </div>
 </section>

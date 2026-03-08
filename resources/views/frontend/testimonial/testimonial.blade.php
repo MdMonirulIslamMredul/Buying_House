@@ -52,6 +52,12 @@
                 </div>
             @endforeach
         </div>
+
+         <div class="text-center mt-4" data-aos="fade-up" data-aos-duration="1200">
+        <a href="{{ route('testimonial.page') }}" class="blog-read-more-modern">
+            All Testimonials <i class="flaticon-right-arrow"></i>
+        </a>
+        </div>
     </div>
 </section>
 

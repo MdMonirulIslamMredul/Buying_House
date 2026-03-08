@@ -46,8 +46,8 @@
 -------------------------------*/
 /* CSS variable overrides when dark theme is active on <html> */
 html.theme-dark {
-  --primary-gradient-start: #36d1dc;
-  --primary-gradient-end: #5865f2;
+  --primary-gradient-start: #741516;
+  --primary-gradient-end: #b65c47;
   --dark-bg: #071018;
   --dark-bg-secondary: #0f1720;
   --light-bg: #0b0f12;

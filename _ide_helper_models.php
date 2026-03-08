@@ -441,6 +441,78 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\Product
+ *
+ * @property int $id
+ * @property int|null $product_category_id
+ * @property int|null $subcategory_id
+ * @property string $name
+ * @property string $price
+ * @property string|null $sku
+ * @property int $stock
+ * @property string|null $size
+ * @property string|null $color
+ * @property string|null $material
+ * @property string|null $gender
+ * @property string|null $slug
+ * @property string $image
+ * @property string|null $description
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\ProductCategory|null $category
+ * @property-read \App\Models\SubCategory|null $subcategory
+ * @method static \Illuminate\Database\Eloquent\Builder|Product newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Product newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Product query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereColor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereGender($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereMaterial($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereProductCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereSize($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereSku($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereStock($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereSubcategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Product whereUpdatedAt($value)
+ */
+	class Product extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\ProductCategory
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $slug
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\SubCategory> $subcategories
+ * @property-read int|null $subcategories_count
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory query()
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProductCategory whereUpdatedAt($value)
+ */
+	class ProductCategory extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Service
  *
  * @property int $id
@@ -542,6 +614,32 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|ServiceVideo whereYoutubeUrl($value)
  */
 	class ServiceVideo extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\SubCategory
+ *
+ * @property int $id
+ * @property int $product_category_id
+ * @property string $name
+ * @property string|null $slug
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\ProductCategory $category
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory whereProductCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SubCategory whereUpdatedAt($value)
+ */
+	class SubCategory extends \Eloquent {}
 }
 
 namespace App\Models{

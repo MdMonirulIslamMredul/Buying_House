@@ -1,0 +1,17 @@
+/* Override navbar hover color - include this after bootstrap.min.css */
+:root {
+  --bs-navbar-hover-color: #741516;
+}
+
+/* Ensure dark navbar also uses it */
+.navbar-dark {
+  --bs-navbar-hover-color: #741516;
+}
+
+/* Fallback: force nav link hover color where variables might not apply */
+.navbar .nav-link:hover,
+.navbar-dark .nav-link:hover,
+.navbar .navbar-brand:hover,
+.navbar-dark .navbar-brand:hover {
+  color: #741516 !important;
+}
