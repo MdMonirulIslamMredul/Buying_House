@@ -88,11 +88,15 @@
 </body>
 
 <script>
-    tinymce.init({
-        selector: 'textarea#tinymce, textarea.editor',
-        height: 500,
-        menubar: false,
-        branding: false
+    $(document).ready(function() {
+        if (document.querySelector('textarea#tinymce, textarea.editor, textarea#default')) {
+            tinymce.init({
+                selector: 'textarea#tinymce, textarea.editor, textarea#default',
+                height: 500,
+                menubar: false,
+                branding: false
+            });
+        }
     });
 </script>
 

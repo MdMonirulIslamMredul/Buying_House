@@ -103,35 +103,31 @@
                             </td>
                         </tr> @endforeach
 
-                        </tbody>
+                            </tbody>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <script type="text/javascript">
-            tinymce.init({
-                selector: 'textarea#default'
-            });
-        </script>
-        <script>
-            (function($) {
-                "use strict";
-                $(document).ready(function() {
-                    $("#addFeaturesRow").on("click", function() {
-                        var new_row = $("#hidden-location-box").html();
-                        $("#nearest-place-box").append(new_row)
 
-                    })
-                    $(document).on('click', '.removeNearestPlaceRow', function() {
-                        $(this).closest('.delete-dynamic-location').remove();
+            <script>
+                (function($) {
+                    "use strict";
+                    $(document).ready(function() {
+                        $("#addFeaturesRow").on("click", function() {
+                            var new_row = $("#hidden-location-box").html();
+                            $("#nearest-place-box").append(new_row)
+
+                        })
+                        $(document).on('click', '.removeNearestPlaceRow', function() {
+                            $(this).closest('.delete-dynamic-location').remove();
+                        });
+                        //end dynamic nearest place add and remove
+
+
+
                     });
-                    //end dynamic nearest place add and remove
 
-
-
-                });
-
-            })(jQuery);
-        </script>
+                })(jQuery);
+            </script>
 @endsection

@@ -38,6 +38,7 @@ class WebsiteController extends Controller
             'counter' => Counter::latest()->first(),
             'galleries' => VideoGallery::where('status', 1)->take('3')->get(),
             'partner' => Patnar::latest()->take(5)->get(),
+            'products' => Product::where('status', 1)->take(9)->get(),
 
         ]);
     }

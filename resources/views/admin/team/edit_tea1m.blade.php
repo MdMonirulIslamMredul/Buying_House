@@ -79,9 +79,4 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        tinymce.init({
-            selector: 'textarea#default'
-        });
-    </script>
 @endsection

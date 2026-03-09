@@ -140,12 +140,7 @@
     </div>
 </div>
 
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript">
-    tinymce.init({
-        selector: 'textarea#default'
-    });
-
     // Live preview for Google Maps embed code
     document.addEventListener('DOMContentLoaded', function() {
         const mapInput = document.getElementById('map_link');
@@ -183,7 +178,8 @@
                     const embedCode = mapInput.value.trim();
                     if (embedCode && !embedCode.includes('iframe')) {
                         alert(
-                            'Please paste the complete iframe embed code from Google Maps, not just a URL.');
+                            'Please paste the complete iframe embed code from Google Maps, not just a URL.'
+                            );
                     }
                 }, 100);
             });
