@@ -348,7 +348,9 @@
 
 
     <!-- Team Section Start -->
-    @include('frontend.team.team')
+
+    {{-- @include('frontend.team.team') --}}
+
     <!-- Team Section End -->
 
     <!-- Testimonial Section Start -->

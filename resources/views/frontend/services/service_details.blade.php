@@ -61,8 +61,8 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba(10, 15, 30, 0.85);
-                background: linear-gradient(135deg, rgba(10, 15, 30, 0.95) 0%, rgba(20, 30, 50, 0.85) 100%);
+                background: rgba(100, 90, 91, 0.358);
+                background: linear-gradient(135deg, rgba(37, 3, 4, 0.6) 0%, rgba(62, 49, 49, 0.469) 100%);
             }
 
             .hero-content {
@@ -100,7 +100,7 @@
 
             .hero-cta-btn {
                 display: inline-block;
-                background: linear-gradient(90deg, #5865f2 0%, #36d1dc 100%);
+                background: linear-gradient(90deg, #5865f2 0%, #741516 100%);
                 color: #ffffff;
                 padding: 18px 45px;
                 border-radius: 50px;
@@ -174,7 +174,7 @@
                             @endif
 
                             {{-- Results/Statistics Section --}}
-                            <div class="results-stats-section mb-5">
+                            {{-- <div class="results-stats-section mb-5">
                                 <h3 class="mb-4">Results That Matter</h3>
                                 <div class="row g-4">
                                     <div class="col-md-3 col-6">
@@ -202,7 +202,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- Two column images gallery --}}
                             @if ($service->details_image1 || $service->details_image2)
@@ -262,7 +262,7 @@
                             @endif
 
                             <!-- Service Components Grid Section -->
-                            <div class="service-components-section mb-5">
+                            {{-- <div class="service-components-section mb-5">
                                 <h3 class="mb-4">Our Process & Components</h3>
                                 <div class="row g-4">
                                     <div class="col-md-6">
@@ -330,7 +330,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- Embedded Videos --}}
                             @if ($service->videos && $service->videos->count())
@@ -357,8 +357,7 @@
                                                     <div class="video-wrapper rounded overflow-hidden"
                                                         style="box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                                                         <div class="ratio ratio-16x9">
-                                                            <iframe
-                                                                src="https://www.youtube.com/embed/{{ $yt_id }}"
+                                                            <iframe src="https://www.youtube.com/embed/{{ $yt_id }}"
                                                                 title="{{ $video->title }}" frameborder="0"
                                                                 allowfullscreen></iframe>
                                                         </div>
@@ -381,8 +380,7 @@
                                         @foreach ($service->faqs as $index => $faq)
                                             <div class="accordion-item border-bottom">
                                                 <h2 class="accordion-header" id="heading{{ $faq->id }}">
-                                                    <button
-                                                        class="accordion-button {{ $index ? 'collapsed' : '' }} fw-600"
+                                                    <button class="accordion-button {{ $index ? 'collapsed' : '' }} fw-600"
                                                         type="button" data-bs-toggle="collapse"
                                                         data-bs-target="#collapse{{ $faq->id }}"
                                                         aria-expanded="{{ $index ? 'false' : 'true' }}"
@@ -421,10 +419,12 @@
                         <div class="sidebar-card mb-4 p-4 bg-gradient rounded text-white"
                             style="box-shadow: 0 8px 25px rgba(54, 209, 220, 0.15);">
                             <h5 class="mb-3">Quick Consultation</h5>
-                            <p class="mb-4">Get expert guidance on how this service can benefit your business.</p>
+                            <p class="mb-4" style="color:aliceblue"> Get expert guidance on how this service can benefit
+                                your business.</p>
                             <a href="{{ route('contacts') }}" class="btn btn-cta-light btn-sm w-100 mb-3">Schedule a
                                 Call</a>
-                            <p class="small mb-0" style="opacity: 0.9;">Free 30-minute consultation with our team</p>
+                            <p class="small mb-0" style="color:aliceblue">Free 30-minute consultation with our team
+                            </p>
                         </div>
 
                         <!-- Key Benefits Card -->
@@ -686,7 +686,7 @@
 
             /* Final CTA Section */
             .final-cta-section {
-                background: linear-gradient(135deg, #36d1dc 0%, #5865f2 100%) !important;
+                background: linear-gradient(135deg, #36d1dc 0%, #741516 100%) !important;
                 margin-top: 3rem;
             }
 
@@ -712,7 +712,7 @@
             }
 
             .sidebar-card.bg-gradient {
-                background: linear-gradient(135deg, #36d1dc 0%, #5865f2 100%) !important;
+                background: linear-gradient(135deg, #36d1dc 0%, #741516 100%) !important
             }
 
             .sidebar-card h5,
@@ -765,7 +765,7 @@
             /* Custom Button Styles */
             .btn-cta-primary {
                 display: inline-block;
-                background: white;
+                background: #0e0808d4;
                 color: #36d1dc;
                 padding: 16px 40px;
                 border-radius: 50px;
@@ -805,8 +805,8 @@
 
             .btn-cta-light {
                 display: inline-block;
-                background: white;
-                color: #36d1dc;
+                background: #7272728b;
+                color: #74d1dc;
                 padding: 10px 25px;
                 border-radius: 50px;
                 font-weight: 700;
@@ -827,7 +827,7 @@
 
             .btn-cta-outline {
                 display: inline-block;
-                background: transparent;
+                background: #741516;
                 color: #36d1dc;
                 padding: 10px 25px;
                 border-radius: 50px;
