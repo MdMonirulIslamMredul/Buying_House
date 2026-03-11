@@ -193,11 +193,13 @@
                 @foreach ($products as $product)
                     <div class="prod-slide" data-aos="fade-up" data-aos-duration="1200"
                         data-aos-delay="{{ $loop->index * 80 }}">
-                        <div class="prod-card">
-                            <div class="prod-card-img" style="background-image:url('{{ asset($product->image) }}')">
+                        <a href="{{ route('product.details', $product->id) }}" class="text-decoration-none">
+                            <div class="prod-card">
+                                <div class="prod-card-img" style="background-image:url('{{ asset($product->image) }}')">
+                                </div>
+                                <div class="prod-card-label">{{ $product->name }}</div>
                             </div>
-                            <div class="prod-card-label">{{ $product->name }}</div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>

@@ -143,6 +143,12 @@ class WebsiteController extends Controller
             'banner' => BannerAndTitle::where('page', 'products')->latest()->first(),
         ]);
     }
+
+    public function product_details($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('frontend.products.product_details', compact('product'));
+    }
     public function blogs_page()
     {
         return view('frontend.blogs.blogs_page', [

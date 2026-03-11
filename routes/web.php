@@ -44,6 +44,7 @@ Route::get('/products', [WebsiteController::class, 'package_page'])->name('packa
 Route::get('/products-page', [WebsiteController::class, 'products_page'])->name('products.page');
 Route::get('/products/category/{id}', [WebsiteController::class, 'products_category'])->name('products.category');
 Route::get('/products/subcategory/{id}', [WebsiteController::class, 'products_subcategory'])->name('products.subcategory');
+Route::get('/product/{id}', [WebsiteController::class, 'product_details'])->name('product.details');
 Route::get('/blogs-page', [WebsiteController::class, 'blogs_page'])->name('blogs.page');
 Route::get('/blogs-details/{id}', [WebsiteController::class, 'blogs_details'])->name('blogs.details');
 Route::get('/contacts', [WebsiteController::class, 'contacts'])->name('contacts');
