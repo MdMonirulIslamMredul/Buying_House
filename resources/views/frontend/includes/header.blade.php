@@ -54,9 +54,9 @@
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="{{ route('front.page') }}">
                     @php $logo = \App\Models\Logo::latest()->first() @endphp
-                    <img class="logo-light" src="{{ asset($logo->logo_image ?? null) }}" height="80px" width="170px"
+                    <img class="logo-light" src="{{ asset($logo->logo_image ?? null) }}" height="  100px" width="120px"
                         alt="logo">
-                    <img class="logo-dark" src="{{ asset($logo->logo_image ?? null) }}" height="80px" width="170px"
+                    <img class="logo-dark" src="{{ asset($logo->logo_image ?? null) }}" height="100px" width="120px"
                         alt="logo">
                     {{--                    Medical Care --}}
                 </a>
